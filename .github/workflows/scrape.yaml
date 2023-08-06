@@ -46,12 +46,12 @@ jobs:
       - name: Update and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_EMAIL: perfscale-automation@redhat.com
-          GH_USERNAME: redhat-perfbot
+          GH_EMAIL: sboyapal@redhat.com
+          GH_USERNAME: shashank-boyapally
         run: |
           git config --global user.name $GH_USERNAME
           git config --global user.email $GH_EMAIL
-          git remote set-url origin https://$GH_USERNAME:$GITHUB_TOKEN@github.com/redhat-performance/tooling-curator.git
+          git remote set-url origin https://$GH_USERNAME:$GITHUB_TOKEN@github.com/shashank-boyapally/tooling-curator.git
           git add repositories.json
           git diff-index --quiet HEAD || git commit -am "Periodic repo scrape $(date)"
           git push
